@@ -1,0 +1,9 @@
+export { default as Javascript } from "./JavascriptIcon";
+export { default as TypescriptIcon } from "./TypescriptIcon";
+export { default as NodeIcon } from "./NodeIcon";
+export { default as PostgresIcon } from "./PostgresIcon";
+export { default as ReactIcon } from "./ReactIcon";
+export { default as ExpressIcon } from "./ExpressIcon";
+export { default as DownloadIcon } from "./DownloadIcon";
+export { default as WhatsAppIcon } from "./WhatsAppIcon";
+export { default as Github } from "./Github";

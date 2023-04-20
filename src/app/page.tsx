@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { WhatsAppIcon } from "~/assets/icons";
 import profileImage from "~/assets/imageProfile.jpeg";
+import BgBlur from "~/components/BgBlur";
 
 export default function Home() {
   return (
@@ -10,11 +11,11 @@ export default function Home() {
         <Image
           src={profileImage}
           alt="my Image Profile"
-          className="rounded-full object-cover w-48 h-48 object-top mb-2 border-8 border-blue-600 hover:scale-110 transition-all"
+          className="rounded-full z-10 object-cover w-48 h-48 object-top mb-2 border-8 border-blue-600 hover:scale-110 transition-all"
         />
-        <div className="absolute w-28 pb-60 h-28 before:h-[300px] before:w-[480px] before:-translate-x-1/4 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl pr-52 before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]"></div>
+        <BgBlur />
         <h1
-          className="font-bold text-center -tracking-wide pb-1 trak text-transparent text-4xl md:text-6xl bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-700 to-pink-600"
+          className="font-bold text-center -tracking-wide z-10 pb-1 trak text-transparent text-4xl md:text-6xl bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-700 to-pink-600"
           style={{ fontWeight: "900" }}
         >
           Hello, My name is Joel Viloria

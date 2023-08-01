@@ -5,11 +5,6 @@ import { Button, Timeline } from "~/components";
 import BgBlur from "~/components/BgBlur";
 
 const AboutPage = () => {
-  const handleCLick = () => {
-    const rutaArchivo = "/files/Joel_CV.pdf";
-    window.open(rutaArchivo, "_blank");
-  };
-
   return (
     <div className="flex gap-8 justify-center items-center h-full px-8">
       <div className="flex flex-col lg:flex-row gap-10 pb-8 lg:pb-0 justify-center items-center">
@@ -18,22 +13,13 @@ const AboutPage = () => {
             History <span className="text-blue-600">.</span>
           </h2>
           <p className="lg:w-[30rem] text-gray-300">
-            Hello, my name is Joel, I'm 18 years old, I am a fullstack JS
+            Hello, my name is Joel, I'm 19 years old, I am a fullstack JS
             developer, +1 years of experience working in different projects with
             multiple roles
           </p>
-          <p className="lg:w-[30rem] text-gray-300">
-            I started my profession since I was studying, when my teacher saw me
-            in class and being one of the outstanding students in his class, he
-            decided to hire me for his company, where he was needing a developer
-            to migrate his application that was at that time. developed in
-            Visual Basic, after that experience, and with more knowledge, I
-            started as a freelance where I acquired much more knowledge of
-            modern technologies
-          </p>
 
           <Link
-            href="/files/Joel_CV.pdf"
+            href="/files/CV-Joel.pdf"
             target="_blank"
             className="px-4 py-2 bg-blue-600 w-44 flex rounded-xl gap-2 justify-center"
           >

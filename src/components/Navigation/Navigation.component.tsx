@@ -39,7 +39,7 @@ const Navigation: FC<NavigationProps> = (props) => {
   const pathname = usePathname();
 
   return (
-    <nav className="absolute top-0 w-full h-20 px-8 py-4 sm:py-0 flex flex-col sm:flex-row justify-between items-center mb-4 sm:gap-12">
+    <nav className="absolute top-0 w-full h-20 px-8 py-6 sm:py-2 flex flex-col sm:flex-row justify-between items-center mb-4 sm:gap-12">
       <p className="font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-800">
         Dev. Viloria
       </p>
@@ -49,7 +49,7 @@ const Navigation: FC<NavigationProps> = (props) => {
             <Link key={link.id} data={link} active={pathname === link.path} />
           ))}
         </ul>
-        <span className="bg-blue-600 w-full h-[2px] rounded-xl"></span>
+        <span className="bg-gradient-to-r from-sky-500 via-blue-600 to-pink-600 w-full h-[2px] rounded-xl"></span>
       </section>
     </nav>
   );

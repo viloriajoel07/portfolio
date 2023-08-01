@@ -1,11 +1,15 @@
 import React from "react";
 
-const WhatsAppIcon = () => {
+interface Props {
+  size?: number
+}
+
+const WhatsAppIcon = ({ size }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width={size || "24"}
+      height={size || "24"}
       viewBox="0 0 24 24"
     >
       <path

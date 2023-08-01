@@ -11,9 +11,9 @@ export const ProjectsDeploy = [
     href: "https://schwimmbecken.netlify.app/",
   },
   {
-    name: "ShopeApp",
-    image: "shopeStore.png",
-    href: "https://shoes-stroe.netlify.app/",
+    name: "EsSential",
+    image: "essential.png",
+    href: "https://essential-vl.netlify.app/",
     githubLink: "https://github.com/viloriajoel07/Shope",
   },
 ];

@@ -41,6 +41,7 @@ const SectionDemo: FC<DemoProps> = ({ data, deploy = false }) => {
                         <a
                           href={project.githubLink}
                           target="__blank"
+                          onClick={(e) => e.stopPropagation()}
                           className={` ${
                             !project.githubLink
                               ? "opacity-60"

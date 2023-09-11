@@ -1,7 +1,9 @@
 "use client";
+import Link from "next/link";
 import { FC, useEffect, useState } from "react";
-import Link from "./Link.component";
+import LinkCo from "./Link.component";
 import { usePathname } from "next/navigation";
+import { Github, WhatsAppIcon } from "~/assets/icons";
 
 type Link = {
   title: string;
@@ -14,23 +16,23 @@ interface NavigationProps {}
 const navigationLinks = [
   {
     title: "Home",
-    path: "/",
+    path: "#home",
     id: 1,
   },
   {
-    title: "History",
-    path: "/aboutMe",
+    title: "Experience",
+    path: "#experience",
     id: 2,
   },
   {
-    title: "Skills",
-    path: "/skills",
-    id: 3,
+    title: "Projects",
+    path: "#projects",
+    id: 4,
   },
   {
-    title: "Proyects",
-    path: "/works",
-    id: 4,
+    title: "Skills",
+    path: "#skills",
+    id: 3,
   },
 ];
 
@@ -39,17 +41,30 @@ const Navigation: FC<NavigationProps> = (props) => {
   const pathname = usePathname();
 
   return (
-    <nav className="absolute top-0 w-full h-20 px-8 py-6 sm:py-2 flex flex-col sm:flex-row justify-between items-center mb-4 sm:gap-12">
+    <nav className="fixed backdrop-blur-lg left-0 top-0 py-2 md:py-0 z-50 w-full h-20 px-8 flex flex-col sm:flex-row justify-between items-center sm:gap-12">
       <p className="font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-800">
         Dev. Viloria
       </p>
-      <section className="flex flex-col gap-2">
-        <ul className="flex gap-4 px-4 pt-2 sm:pt-0">
+      <section className="flex flex-col md:flex-row gap-3 items-center">
+        <ul className="flex gap-4 px-2 pt-2 sm:pt-0">
           {links.map((link: Link) => (
-            <Link key={link.id} data={link} active={pathname === link.path} />
+            <LinkCo key={link.id} data={link} active={pathname === link.path} />
           ))}
         </ul>
-        <span className="bg-gradient-to-r from-sky-500 via-blue-600 to-pink-600 w-full h-[2px] rounded-xl"></span>
+        <div className="hidden md:flex gap-3 border px-4 py-1 rounded-xl">
+          <Link
+            href="https://wa.me/3217225024?text=Hello."
+            className="hover:scale-110 transition-all"
+          >
+            <WhatsAppIcon size={24} />
+          </Link>
+          <Link
+            href="https://github.com/viloriajoel07"
+            className="hover:scale-110 transition-all"
+          >
+            <Github size={24} />
+          </Link>
+        </div>
       </section>
     </nav>
   );

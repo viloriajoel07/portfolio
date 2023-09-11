@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import {
   Javascript,
@@ -37,9 +36,12 @@ const iconSkill = [
   },
 ];
 
-const SkillPage = () => {
+const Skill = () => {
   return (
-    <main className="flex flex-col items-center justify-center py-4 px-2 z-0">
+    <main
+      className="pt-20 flex flex-col items-center w-full justify-center h-screen py-4 px-2 z-0 border-t border-white/10"
+      id="skills"
+    >
       <div className="flex flex-col items-center justify-center gap-3 z-10">
         <h2 className="font-bold text-4xl lg:text-5xl">
           My skills <span className="text-blue-600">.</span>
@@ -64,4 +66,4 @@ const SkillPage = () => {
   );
 };
 
-export default SkillPage;
+export default Skill;

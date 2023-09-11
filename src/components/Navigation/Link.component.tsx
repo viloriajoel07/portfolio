@@ -13,15 +13,12 @@ interface linkProps {
 const ULink: FC<linkProps> = ({ data, active }) => {
   return (
     <li>
-      <Link
+      <a
         href={data.path}
-        className={`text-gray-300 hover:text-gray-200 ${
-          active &&
-          "font-bold !text-white drop-shadow-2xl shadow-green-600 overflow-hidden"
-        } cursor-pointer`}
+        className={`text-gray-300 hover:text-gray-200 cursor-pointer`}
       >
         <p className="overflow-y-hidden">{data.title}</p>
-      </Link>
+      </a>
     </li>
   );
 };

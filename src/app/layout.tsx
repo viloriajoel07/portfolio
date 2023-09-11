@@ -17,7 +17,7 @@ export default function RootLayout({
       <body className="flex flex-col items-center min-h-screen px-4">
         <div className="max-w-[80rem] w-full min-h-screen flex flex-col justify-center relative">
           <Navigation />
-          <div className="h-full mt-20 py-8 sm:py-0">{children}</div>
+          {children}
         </div>
       </body>
     </html>

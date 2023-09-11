@@ -41,7 +41,7 @@ const Navigation: FC<NavigationProps> = (props) => {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed backdrop-blur-lg left-0 top-0 py-2 md:py-0 z-50 w-full h-20 px-8 flex flex-col sm:flex-row justify-between items-center sm:gap-12">
+    <nav className="fixed backdrop-blur-lg left-0 top-0 py-4 md:py-0 z-50 w-full h-20 px-8 flex flex-col sm:flex-row justify-between items-center sm:gap-12">
       <p className="font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-800">
         Dev. Viloria
       </p>
@@ -51,7 +51,7 @@ const Navigation: FC<NavigationProps> = (props) => {
             <LinkCo key={link.id} data={link} active={pathname === link.path} />
           ))}
         </ul>
-        <div className="hidden md:flex gap-3 border px-4 py-1 rounded-xl">
+        <div className="hidden sm:flex gap-3 border px-4 py-1 rounded-xl">
           <Link
             href="https://wa.me/3217225024?text=Hello."
             className="hover:scale-110 transition-all"

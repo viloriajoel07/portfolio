@@ -29,8 +29,8 @@ export default function Home() {
               className="md:text-xl max-w-[32rem] font-extralight text-center lg:text-start"
               style={{ fontWeight: "100" }}
             >
-              My name is Joel, I am a fullstack JS developer, 2 years of
-              experience working as a developer
+              I'm a fullstack JS developer, 2 years of experience working as a
+              developer
             </h2>
             {/* <hr className="my-6" /> */}
             <div className="flex items-center justify-center lg:justify-start mt-1 gap-4">
@@ -55,7 +55,7 @@ export default function Home() {
       <Experience />
       <Projects />
       <Skill />
-      <div className="flex lg:hidden gap-4 border px-6 py-2 rounded-xl fixed bottom-4 bg-black">
+      <div className="flex sm:hidden gap-4 border px-6 py-2 rounded-xl fixed bottom-4 bg-black">
         <Link
           href="https://wa.me/3217225024?text=Hello."
           className="hover:scale-110 transition-all"

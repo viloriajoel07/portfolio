@@ -31,7 +31,7 @@ export default function Home() {
 
             <div className="flex items-center justify-center lg:justify-start mt-6 gap-4">
               <Link
-                href="/files/CV-Joel.pdf"
+                href="/files/resumen-Joel.pdf"
                 target="_blank"
                 className="px-4 py-2 hover:shadow-xl hover:shadow-sky-400/10 bg-transparent border w-44 flex rounded-md gap-2 justify-center text-sky-400 border-sky-400 hover:bg-sky-400/20 transition-all"
               >

@@ -38,13 +38,30 @@ const navigationLinks = [
 
 const Navigation: FC<NavigationProps> = (props) => {
   const [links, setLinks] = useState(navigationLinks);
+
+  const [colorNav, setColorNav] = useState(false);
+
   const pathname = usePathname();
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        setColorNav(true);
+      } else {
+        setColorNav(false);
+      }
+    });
+  }, []);
+
   return (
-    <nav className="fixed backdrop-blur-lg left-0 top-0 py-4 md:py-0 z-50 w-full h-20 px-8 flex flex-col sm:flex-row justify-between items-center sm:gap-12">
-      <p className="font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-800">
-        Dev. Viloria
-      </p>
+    <nav
+      className={`fixed ${
+        colorNav
+          ? "bg-slate-950"
+          : "bg-gradient-to-r from-slate-900 to-slate-950"
+      } left-0 top-0 py-4 lg:py-5 z-50 w-full px-8 sm:px-36 flex flex-col lg:flex-row justify-between items-center gap-2 lg:gap-12 transition-colors duration-200`}
+    >
+      <p className="font-semibold text-2xl text-sky-400">Dev. Viloria</p>
       <section className="flex flex-col md:flex-row gap-3 items-center">
         <ul className="flex gap-4 px-2 pt-2 sm:pt-0">
           {links.map((link: Link) => (

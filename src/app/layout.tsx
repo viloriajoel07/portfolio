@@ -14,10 +14,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <title>Viloria Dev</title>
-      <body className="flex flex-col items-center min-h-screen px-4">
-        <div className="max-w-[80rem] w-full min-h-screen flex flex-col justify-center relative">
-          <Navigation />
-          {children}
+      <body className="flex flex-col min-h-screen">
+        <Navigation />
+        <div className="w-full min-h-screen flex flex-col bg-gradient-to-r from-slate-900 to-slate-950 relative">
+          <div className="flex w-full flex-col justify-center text-white">
+            {children}
+          </div>
         </div>
       </body>
     </html>

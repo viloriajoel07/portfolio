@@ -24,7 +24,7 @@ export default function Home() {
               className="md:text-xl font-extralight text-center lg:text-start"
               style={{ fontWeight: "100" }}
             >
-              I’M FULLSTACK JAVISCRIPT DEVELOPER, +2 YEARS <br /> OF EXPERIENCE
+              I’M FULLSTACK JAVISCRIPT DEVELOPER, +1 YEARS <br /> OF EXPERIENCE
             </h2>
 
             <span className="w-24 h-2 bg-sky-400 rounded-lg"></span>

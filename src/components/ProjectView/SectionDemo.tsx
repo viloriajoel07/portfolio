@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import { Github } from "~/assets/icons";
-
+import { Button } from "../Button";
+import WebIcon from "../../assets/web.svg";
 interface DemoProps {
   data: any[];
   deploy?: boolean;
@@ -11,69 +12,75 @@ interface DemoProps {
 }
 
 const SectionDemo: FC<DemoProps> = ({ data, deploy = false }) => {
-  const handlePage = (link: string) => {
-    if (!link) return;
-    window.open(link, "_blank");
-  };
-
   return (
-    <div className="flex flex-wrap gap-6 items-center justify-center w-full">
-      {deploy
-        ? data.map((project, index) => {
-            if (!project.image) return;
-            const backImage = require(`../../assets/projectsImage/${project.image}`);
-            return (
-              <div
-                key={(project.image, index)}
-                className="rounded-xl max-w-96 w-96 h-60 relative z-0 cursor-pointer hover:scale-105 transition-all"
-                onClick={() => handlePage(project.href)}
-              >
-                <div className="w-full h-full z-20 absolute p-[3px] bg-gradient-to-r from-cyan-400 via-blue-600 to-pink-600 rounded-xl">
-                  <div className="w-full h-full relative">
-                    <div className="w-full h-full p-3 z-30 absolute bg-black bg-opacity-90 backdrop-blur-sm rounded-xl flex flex-col gap-4">
-                      <Image
-                        src={backImage}
-                        alt="image"
-                        className="rounded-xl object-cover w-full h-full"
-                      />
-                      <div className="flex justify-between px-1">
-                        <p className="">{project.name}</p>
-                        <a
-                          href={project.githubLink}
-                          target="__blank"
-                          onClick={(e) => e.stopPropagation()}
-                          className={` ${
-                            !project.githubLink
-                              ? "opacity-60"
-                              : "hover:scale-110"
-                          }`}
-                        >
-                          <Github />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })
-        : data.map((project, index) => {
-            if (!project.image) return;
-            const img = require(`../../assets/projectsImage/${project.image}`);
-            return (
-              <div
-                key={(project.image, index)}
-                className="w-full sm:w-72 h-56 sm:h-40 rounded-xl border-2 hover:scale-105 transition-all relative"
-              >
+    <div className="flex flex-col items-center w-full">
+      {deploy &&
+        data.map((project, index) => {
+          const validation = index % 2 === 0;
+          if (!project.image) return;
+          const backImage = require(`../../assets/projectsImage/${project.image}`);
+          return (
+            <div
+              key={(project.image, index)}
+              className={`w-full p-8 md:p-16 ${
+                index === 0 ? "!pt-0" : ""
+              } flex border-b flex-col border-white/10 ${
+                !validation ? "md:flex-row-reverse" : "md:flex-row"
+              }`}
+            >
+              <div className="flex flex-1 justify-center items-center text-white hover:scale-110 transition-all duration-300">
                 <Image
-                  src={img}
-                  alt="imageOfGallery"
-                  className="w-full h-full object-cover absolute rounded-xl z-10"
+                  src={backImage}
+                  alt={project.name}
+                  className="z-0 w-full xs:w-3/6 lg:w-full"
                 />
-                <span className="w-full h-full bg-black hover:bg-opacity-60 bg-opacity-30 absolute rounded-xl z-20"></span>
               </div>
-            );
-          })}
+              <section className="flex flex-col flex-1 justify-center">
+                <p className="text-2xl font-semibold uppercase underline underline-offset-[6px] mb-3">
+                  {project.name}
+                </p>
+                <div className="flex gap-2">
+                  {project.thecnologies.map((title: string) => {
+                    return (
+                      <p className="px-2 py-0 text-sm rounded-lg border">
+                        {title}
+                      </p>
+                    );
+                  })}
+                </div>
+                <p className="text-slate-100/80 my-6 !font-light">
+                  {project.description}
+                </p>
+                <div className="flex flex-col md:flex-row gap-2">
+                  {project.href && (
+                    <Link href={String(project.href)} target="_blank">
+                      <Button classButton="flex gap-2 w-full whitespace-nowrap">
+                        Go to website
+                        <Image
+                          src={WebIcon}
+                          alt="Web Icon"
+                          width={24}
+                          className="opacity-80"
+                        />
+                      </Button>
+                    </Link>
+                  )}
+                  {project.githubLink && (
+                    <Link href={String(project.githubLink)} target="_blank">
+                      <Button
+                        typeStyle="outline"
+                        classButton="flex gap-2 w-full whitespace-nowrap"
+                      >
+                        Check out github
+                        <Github />
+                      </Button>
+                    </Link>
+                  )}
+                </div>
+              </section>
+            </div>
+          );
+        })}
     </div>
   );
 };

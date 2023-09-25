@@ -13,7 +13,7 @@ const listTimeline = [
     title: "Freelance Developer",
     date: "May 7th, 2022",
     description:
-      "During this time I worked in partnership with a friend, where we developed two main applications, one for pool reservations, and another for personal finance management.",
+      "I Developed two main applications, one for pool reservations, and another for personal finance management.",
     id: 2,
   },
   {

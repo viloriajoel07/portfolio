@@ -19,20 +19,20 @@ const navigationLinks = [
     path: "#home",
     id: 1,
   },
+  // {
+  //   title: "Experience",
+  //   path: "#experience",
+  //   id: 2,
+  // },
   {
-    title: "Experience",
-    path: "#experience",
-    id: 2,
+    title: "Skills",
+    path: "#skills",
+    id: 3,
   },
   {
     title: "Projects",
     path: "#projects",
     id: 4,
-  },
-  {
-    title: "Skills",
-    path: "#skills",
-    id: 3,
   },
 ];
 
@@ -55,20 +55,19 @@ const Navigation: FC<NavigationProps> = (props) => {
 
   return (
     <nav
-      className={`fixed ${
+      className={`${
         colorNav
           ? "bg-slate-950"
           : "bg-gradient-to-r from-slate-900 to-slate-950"
-      } left-0 top-0 py-4 lg:py-5 z-50 w-full px-8 sm:px-36 flex flex-col lg:flex-row justify-between items-center gap-2 lg:gap-12 transition-colors duration-200`}
+      } left-0 top-0 py-4 lg:py-5 z-50 w-full px-8 sm:px-36 flex flex-col lg:flex-row justify-center items-center gap-2 lg:gap-12 transition-colors duration-200`}
     >
-      <p className="font-semibold text-2xl text-sky-400">Dev. Viloria</p>
       <section className="flex flex-col md:flex-row gap-3 items-center">
         <ul className="flex gap-4 px-2 pt-2 sm:pt-0">
           {links.map((link: Link) => (
             <LinkCo key={link.id} data={link} active={pathname === link.path} />
           ))}
         </ul>
-        <div className="hidden sm:flex gap-3 border px-4 py-1 rounded-xl">
+        {/* <div className="hidden sm:flex gap-3 border px-4 py-1 rounded-xl">
           <Link
             href="https://wa.me/3217225024?text=Hello."
             className="hover:scale-110 transition-all"
@@ -81,7 +80,7 @@ const Navigation: FC<NavigationProps> = (props) => {
           >
             <Github size={24} />
           </Link>
-        </div>
+        </div> */}
       </section>
     </nav>
   );

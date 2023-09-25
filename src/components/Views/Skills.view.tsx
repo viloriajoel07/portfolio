@@ -8,8 +8,12 @@ import {
   ExpressIcon,
 } from "~/assets/icons";
 import BgBlur from "~/components/BgBlur";
+import frontIcon from "../../assets/front.svg";
+import backendIcon from "../../assets/backend.svg";
+import Image from "next/image";
+import NextIcon from "~/assets/icons/NextIcon";
 
-const iconSkill = [
+const iconFrontSkill = [
   {
     title: "Javascript",
     icon: <Javascript />,
@@ -21,6 +25,17 @@ const iconSkill = [
   {
     title: "React JS",
     icon: <ReactIcon />,
+  },
+  {
+    title: "Next JS",
+    icon: <NextIcon />,
+  },
+];
+
+const iconBackSkill = [
+  {
+    title: "Typescript",
+    icon: <TypescriptIcon />,
   },
   {
     title: "Node JS",
@@ -39,29 +54,63 @@ const iconSkill = [
 const Skill = () => {
   return (
     <main
-      className="pt-20 flex bg-slate-950 flex-col items-center w-full justify-center h-screen py-4 px-2 z-0"
+      className="flex flex-col items-center w-full justify-center min-h-screen h-full py-4 z-0"
       id="skills"
     >
-      <div className=" h-full max-w-[70rem] flex flex-col justify-center items-center px-6 lg:px-0">
-        <div className="flex flex-col items-center justify-center gap-3 z-10">
-          <h2 className="font-bold text-4xl lg:text-5xl">
-            My skills <span className="text-sky-400">.</span>
-          </h2>
-          <p className="text-gray-300 text-center">
-            I have extensive knowledge in the following technologies
-          </p>
-          <span className="w-full md:w-4/5 h-1 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-600 to-pink-600"></span>
+      <div className=" h-full max-w-[70rem] w-full flex flex-col justify-center items-center lg:px-0">
+        <div className="flex flex-col items-center justify-center z-10 mb-2">
+          <h2 className="font-bold text-2xl lg:text-4xl">Skillsets</h2>
+          <p className="text-gray-300 text-center">Languages & Frameworks</p>
         </div>
         <BgBlur />
-        <section className="flex sm:flex-row flex-wrap justify-center items-center gap-6 py-4 max-w-full z-20">
-          {iconSkill.map(({ icon, title }) => {
-            return (
-              <div className="flex flex-col h-20 justify-between items-center hover:scale-110 transition-all">
-                {icon}
-                <p className="text-gray-300 text-sm">{title}</p>
-              </div>
-            );
-          })}
+        <section className="flex flex-col relative justify-center px-8 xl:px-0 gap-8 py-4 w-full z-20">
+          <aside className="flex flex-col md:flex-row items-center w-full  md:w-[calc(100%-112px)] rounded-md gap-8 lg:gap-32 bg-slate-800/60 border border-white/10 px-8 md:px-14 py-6 backdrop-blur-md">
+            <section className="flex flex-col flex-grow">
+              <Image src={frontIcon} alt="front icon" className="mb-2" />
+              <p className="text-2xl font-semibold">Frontend</p>
+              <ul className="list-disc text-slate-100/80 pl-6 !font-light">
+                <li>
+                  As a frontend developer, I specialize in crafting modern
+                  <br /> and efficient web interfaces, which are essential for
+                  creating engaging web experiences.
+                </li>
+              </ul>
+            </section>
+            <section className="flex flex-wrap justify-center gap-7 w-full md:w-80">
+              {iconFrontSkill.map(({ icon, title }) => {
+                return (
+                  <aside className="flex flex-col h-20 justify-between items-center hover:scale-110 transition-all">
+                    {icon}
+                    <p className="text-gray-300 text-sm">{title}</p>
+                  </aside>
+                );
+              })}
+            </section>
+          </aside>
+          <aside className="flex flex-col-reverse md:flex-row items-center md:ml-28 rounded-md gap-8 lg:gap-32 bg-slate-800/60 border border-white/10 px-8 md:px-14 py-6 backdrop-blur-md">
+            <section className="flex flex-wrap justify-center gap-7 w-full md:w-80">
+              {iconBackSkill.map(({ icon, title }) => {
+                return (
+                  <aside className="flex flex-col h-20 justify-between items-center hover:scale-110 transition-all">
+                    {icon}
+                    <p className="text-gray-300 text-sm">{title}</p>
+                  </aside>
+                );
+              })}
+            </section>
+            <section className="flex flex-col flex-grow md:w-3/6">
+              <Image src={backendIcon} alt="backend icon" className="mb-2" />
+              <p className="text-2xl font-semibold">Backend</p>
+              <ul className="list-disc text-slate-100/80 pl-6 !font-light">
+                <li>
+                  As a backend developer, I possess skills that enable me to
+                  build efficient and scalable web applications, manage routes
+                  and HTTP requests effectively, and work with databases to
+                  store and retrieve data securely and efficiently.
+                </li>
+              </ul>
+            </section>
+          </aside>
         </section>
       </div>
     </main>

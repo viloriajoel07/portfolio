@@ -32,7 +32,7 @@ const SectionDemo: FC<DemoProps> = ({ data, deploy = false }) => {
                 <Image
                   src={backImage}
                   alt={project.name}
-                  className="z-0 w-full xs:w-3/6 lg:w-full"
+                  className="z-0 w-full sm:w-3/6 lg:w-full"
                 />
               </div>
               <section className="flex flex-col flex-1 justify-center">

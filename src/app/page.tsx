@@ -40,7 +40,9 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row px-8 sm:px-0 items-center justify-between lg:justify-start gap-4 w-full mt-10">
               <div className="text-slate-100 flex flex-col flex-1">
-                <p className="text-3xl font-bold">+1 YEAR</p>
+                <p className="text-3xl font-bold text-center sm:text-start">
+                  +1 YEAR
+                </p>
                 <p className="text-slate-100/80 whitespace-nowrap">
                   Working to JavaScript
                 </p>

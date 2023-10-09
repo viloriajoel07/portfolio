@@ -54,7 +54,7 @@ const iconBackSkill = [
 
 const Skill = () => {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen h-full w-full py-4 z-0 relative">
+    <main className="flex flex-col overflow-x-hidden items-center justify-center min-h-screen h-full w-full py-4 z-0 relative">
       <div
         className=" h-full max-w-[80rem] w-full flex flex-col justify-center items-center lg:px-0"
         id="skills"

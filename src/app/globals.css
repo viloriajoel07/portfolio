@@ -1,8 +1,30 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
+  font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
+  color: white;
+}
+
+.levitation-animate {
+  animation: levitation 3.8s ease-in-out infinite;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-[#944DB6] via-[#FFF0D9] to-[#FC60FF] text-transparent bg-clip-text;
+}
+
+@keyframes levitation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

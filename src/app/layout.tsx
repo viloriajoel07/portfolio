@@ -24,13 +24,9 @@ export default function RootLayout({
           gtag('config', 'G-LLEPPZH4M9');
           `}
       </Script>
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col min-h-screen bg-gradient-to-r from-black to-zinc-900 overflow-x-hidden">
         <Navigation />
-        <div className="w-full min-h-screen flex flex-col bg-gradient-to-r from-slate-900 to-slate-950 relative">
-          <div className="flex w-full flex-col justify-center text-white">
-            {children}
-          </div>
-        </div>
+        {children}
       </body>
     </html>
   );

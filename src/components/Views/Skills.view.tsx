@@ -12,6 +12,7 @@ import frontIcon from "../../assets/front.svg";
 import backendIcon from "../../assets/backend.svg";
 import Image from "next/image";
 import NextIcon from "~/assets/icons/NextIcon";
+import Lines from "~/assets/LINES.svg";
 
 const iconFrontSkill = [
   {
@@ -53,18 +54,20 @@ const iconBackSkill = [
 
 const Skill = () => {
   return (
-    <main
-      className="flex flex-col items-center w-full justify-center min-h-screen h-full py-4 z-0"
-      id="skills"
-    >
-      <div className=" h-full max-w-[70rem] w-full flex flex-col justify-center items-center lg:px-0">
+    <main className="flex flex-col items-center justify-center min-h-screen h-full w-full py-4 z-0 relative">
+      <div
+        className=" h-full max-w-[80rem] w-full flex flex-col justify-center items-center lg:px-0"
+        id="skills"
+      >
         <div className="flex flex-col items-center justify-center z-10 mb-2">
-          <h2 className="font-bold text-2xl lg:text-4xl">Skillsets</h2>
-          <p className="text-gray-300 text-center">Languages & Frameworks</p>
+          <h2 className="font-bold text-2xl lg:text-4xl text-gradient">
+            Skillsets
+          </h2>
+          <p className="text-white/60 text-center">Languages & Frameworks</p>
         </div>
         <BgBlur />
         <section className="flex flex-col relative justify-center px-8 xl:px-0 gap-8 py-4 w-full z-20">
-          <aside className="flex flex-col md:flex-row items-center w-full  md:w-[calc(100%-112px)] rounded-md gap-8 lg:gap-32 bg-slate-800/60 border border-white/10 px-8 md:px-14 py-6 backdrop-blur-md">
+          <aside className="flex flex-col md:flex-row items-center w-full  md:w-[calc(100%-112px)] rounded-md gap-8 lg:gap-32 bg-zinc-800/10 border border-white/10 px-8 md:px-14 py-6 backdrop-blur-sm">
             <section className="flex flex-col flex-grow">
               <Image src={frontIcon} alt="front icon" className="mb-2" />
               <p className="text-2xl font-semibold">Frontend</p>
@@ -87,7 +90,7 @@ const Skill = () => {
               })}
             </section>
           </aside>
-          <aside className="flex flex-col-reverse md:flex-row items-center md:ml-28 rounded-md gap-8 lg:gap-32 bg-slate-800/60 border border-white/10 px-8 md:px-14 py-6 backdrop-blur-md">
+          <aside className="flex flex-col-reverse md:flex-row items-center md:ml-28 rounded-md gap-8 lg:gap-32 bg-zinc-800/10 border border-white/10 px-8 md:px-14 py-6 backdrop-blur-sm">
             <section className="flex flex-wrap justify-center gap-7 w-full md:w-80">
               {iconBackSkill.map(({ icon, title }) => {
                 return (
@@ -113,6 +116,11 @@ const Skill = () => {
           </aside>
         </section>
       </div>
+      <Image
+        src={Lines}
+        alt="lines"
+        className="absolute -right-4 rotate-[188deg]"
+      />
     </main>
   );
 };

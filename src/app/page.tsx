@@ -7,30 +7,31 @@ import BgBlur from "~/components/BgBlur";
 import Experience from "~/components/Views/Experience.view";
 import Projects from "~/components/Views/Projects.view";
 import Skill from "~/components/Views/Skills.view";
+import lines from "~/assets/LINES.svg";
+import pointsGrid from "~/assets/pointsGrid.svg";
+import Javascript from "~/assets/icons/Javascript.png";
+import React from "~/assets/icons/React.png";
 
 export default function Home() {
   return (
-    <main className={`w-full flex flex-col justify-center items-center`}>
+    <>
       <div
-        className="flex min-h-screen flex-col gap-2 items-center justify-center px-8 xl:px-0 max-w-[70rem] w-full z-0 relative"
-        id="home"
+        className={`w-full flex flex-col justify-center items-center h-full relative`}
       >
-        <div className="flex flex-col-reverse lg:flex-row justify-start items-center gap-8 lg:gap-48 w-full h-full">
-          <section className="flex flex-col gap-3 lg:gap-2 z-10 justify-center lg:justify-start items-center lg:items-start">
-            <section className="text-4xl px-8 sm:px-0 text-center text-slate-100 lg:text-start w-full md:w-[24rem]">
-              <div className="flex gap-3 items-center">
-                <span className="whitespace-nowrap text-2xl md:text-4xl">
-                  I'm J. Esteban
-                </span>
-                <div className="bg-white w-full flex-1 h-10 rounded-full text-end">
-                  🧑‍💻
-                </div>
-              </div>
-              <span className="font-bold text-4xl md:text-5xl">
-                WEB DEVELOPER
-              </span>
+        <Image src={lines} alt="lines" className="absolute -bottom-16 left-0" />
+        <div className="max-w-[80rem] h-[calc(100vh-80px)] flex flex-col-reverse items-center lg:flex-row w-full md:px-8">
+          <section className="flex-1 flex flex-col gap-3 lg:gap-2 z-10 justify-center lg:justify-start items-center lg:items-start">
+            <section className="px-8 sm:px-0 flex flex-col justify-center md:justify-start text-slate-100">
+              <p className="text-2xl md:text-3xl w-full text-center lg:text-start">
+                I'M JOEL VILORIA
+              </p>
+              <p className="font-bold text-center lg:text-start text-3xl md:text-4xl bg-gradient-to-r from-[#944DB6] via-[#FFF0D9] to-[#FC60FF] text-transparent bg-clip-text ">
+                <span className="pr-2 text-fuchsia-600/25">{"<"}</span>
+                FULL-STACK DEVELOPER
+                <span className="pl-2 text-fuchsia-600/25">{"/>"}</span>
+              </p>
               <h2
-                className="text-lg font-extralight text-center lg:text-start text-slate-100/80"
+                className="font-extralight text-center lg:text-start text-white/60 lg:w-4/6 mt-3"
                 style={{ fontWeight: "100" }}
               >
                 I'm fullstack developer, experienced in high-performance web
@@ -38,53 +39,64 @@ export default function Home() {
               </h2>
             </section>
 
-            <div className="flex flex-col sm:flex-row px-8 sm:px-0 items-center justify-between lg:justify-start gap-4 w-full mt-10">
-              <div className="text-slate-100 flex flex-col flex-1">
-                <p className="text-3xl font-bold text-center sm:text-start">
-                  +1 YEAR
-                </p>
-                <p className="text-slate-100/80 whitespace-nowrap">
-                  Working to JavaScript
-                </p>
-              </div>
-
-              <i className="h-16 w-[2px] hidden sm:block rounded-xl bg-white/80 mx-4" />
-
+            <div className="flex flex-row px-8 sm:px-0 items-center justify-center lg:justify-start gap-2 sm:gap-4 w-full mt-4 md:mt-8 relative pb-6 md:pb-0">
               <Link
                 href="/files/resumen-Joel.pdf"
                 target="_blank"
-                className="px-7 whitespace-nowrap font-semibold flex-1 py-5 h-full hover:shadow-xl text-slate-900 hover:shadow-white/10 flex rounded-md gap-2 justify-center bg-white/80 transition-all"
+                className="px-11 whitespace-nowrap font-medium py-3 hover:shadow-xl flex rounded-full gap-2 justify-center bg-gradient-to-b from-[#D66EFB] to-[#940FC2] transition-all"
               >
                 GET CV
               </Link>
+              <a href="#projects" className="m-0 p-0">
+                <Button
+                  typeStyle="outline"
+                  className="px-7 whitespace-nowrap font-medium py-3"
+                >
+                  PROJECTS
+                </Button>
+              </a>
+              <span className="absolute -bottom-16 -left-8 w-24 h-24  bg-fuchsia-600 blur-3xl rounded-full z-10"></span>
             </div>
           </section>
-          <div className="flex-1 flex ite justify-end">
+          <div className="flex justify-end relative h-full">
+            <span className="absolute top-0 right-0 w-16 h-16  bg-fuchsia-600 blur-2xl rounded-full z-10"></span>
+            <span className="absolute -left-20 top-32 w-4 h-3 rounded-sm rotate-[35deg] bg-[#E59BFF]"></span>
+            <span className="absolute top-8 right-48 w-3 h-3 rounded-sm rotate-[12deg] bg-blue-500"></span>
+            <span className="absolute -right-8 top-48 w-4 h-3 rounded-sm rotate-[35deg] bg-[#FFC226]"></span>
+            <span className="absolute -left-48 top-32 w-24 h-24 rounded-sm blur-[6rem] bg-[#FFC226]"></span>
+            <Image
+              src={pointsGrid}
+              alt="grid"
+              className="absolute z-0 bottom-20 -left-20 hidden md:block"
+            />
+            <Image
+              src={Javascript}
+              alt="Javascript"
+              className="absolute z-0 bottom-20 -left-12 md:-left-32 levitation-animate"
+            />
+            <Image
+              src={React}
+              alt="React"
+              className="absolute z-0 top-16 rigth-8 levitation-animate"
+            />
+            <Image
+              src={pointsGrid}
+              alt="grid"
+              className="absolute z-0 top-36 hidden md:block"
+            />
+
             <Image
               src={profileImage}
               alt="my Image Profile"
-              className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 bg-white object-cover shadow-2xl"
+              className="w-52 sm:w-64 lg:w-80 object-contain z-20"
             />
+            <span className="absolute bottom-60 right-0 w-16 h-16  bg-fuchsia-600 blur-3xl rounded-full z-10"></span>
           </div>
         </div>
+        {/* <Experience /> */}
       </div>
       <Skill />
       <Projects />
-      {/* <Experience /> */}
-      <div className="flex sm:hidden gap-4 border px-6 py-2 rounded-xl fixed bottom-4 bg-black">
-        <Link
-          href="https://wa.me/3217225024?text=Hello."
-          className="hover:scale-110 transition-all"
-        >
-          <WhatsAppIcon size={24} />
-        </Link>
-        <Link
-          href="https://github.com/viloriajoel07"
-          className="hover:scale-110 transition-all"
-        >
-          <Github size={24} />
-        </Link>
-      </div>
-    </main>
+    </>
   );
 }

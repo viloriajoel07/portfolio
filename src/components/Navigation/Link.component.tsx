@@ -12,12 +12,12 @@ interface linkProps {
 
 const ULink: FC<linkProps> = ({ data, active }) => {
   return (
-    <li>
+    <li className="flex items-center">
       <a
         href={data.path}
         className={`text-gray-300 hover:text-gray-200 cursor-pointer`}
       >
-        <p className="overflow-y-hidden !font-light">{data.title}</p>
+        <p className="overflow-y-hidden !font-light text-sm">{data.title}</p>
       </a>
     </li>
   );

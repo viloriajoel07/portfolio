@@ -25,14 +25,14 @@ const SectionDemo: FC<DemoProps> = ({ data, deploy = false }) => {
               className={`w-full ${
                 index === 0 ? "!pt-0" : ""
               } flex flex-col border-white/10 ${
-                validation ? "md:flex-row-reverse" : "md:flex-row"
+                validation ? "lg:flex-row-reverse" : "lg:flex-row"
               }`}
             >
               <div className="flex flex-1 justify-center items-center text-white hover:scale-110 transition-all duration-300">
                 <Image
                   src={backImage}
                   alt={project.name}
-                  className="z-0 w-full sm:w-3/6 lg:w-[90%]"
+                  className="z-0 w-full sm:w-4/6 lg:w-[90%]"
                 />
               </div>
               <section className="flex flex-col flex-1 justify-center">

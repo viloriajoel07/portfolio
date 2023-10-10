@@ -20,7 +20,7 @@ export default function Home() {
       >
         <Image src={lines} alt="lines" className="absolute -bottom-16 left-0" />
         <div className="max-w-[80rem] h-[calc(100vh-80px)] flex flex-col-reverse items-center lg:flex-row w-full md:px-8">
-          <section className="flex-1 flex flex-col gap-3 lg:gap-2 z-10 justify-center lg:justify-start items-center lg:items-start">
+          <section className="flex-1 flex flex-col gap-3 py-8 lg:gap-2 z-10 justify-center lg:justify-start items-center lg:items-start">
             <section className="px-8 sm:px-0 flex flex-col justify-center md:justify-start text-slate-100">
               <p className="text-2xl md:text-3xl w-full text-center lg:text-start">
                 I'M JOEL VILORIA
@@ -58,7 +58,7 @@ export default function Home() {
               <span className="absolute -bottom-16 -left-8 w-24 h-24  bg-fuchsia-600 blur-3xl rounded-full z-10"></span>
             </div>
           </section>
-          <div className="flex justify-end relative h-full">
+          <div className="flex flex-grow lg:flex-none justify-end relative h-fit py-8 lg:py-0">
             <span className="absolute top-0 right-0 w-16 h-16  bg-fuchsia-600 blur-2xl rounded-full z-10"></span>
             <span className="absolute -left-20 top-32 w-4 h-3 rounded-sm rotate-[35deg] bg-[#E59BFF]"></span>
             <span className="absolute top-8 right-48 w-3 h-3 rounded-sm rotate-[12deg] bg-blue-500"></span>

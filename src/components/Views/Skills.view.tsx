@@ -1,4 +1,6 @@
+import Image from "next/image";
 import React from "react";
+
 import {
   Javascript,
   ReactIcon,
@@ -10,7 +12,6 @@ import {
 import BgBlur from "~/components/BgBlur";
 import frontIcon from "../../assets/front.svg";
 import backendIcon from "../../assets/backend.svg";
-import Image from "next/image";
 import NextIcon from "~/assets/icons/NextIcon";
 import Lines from "~/assets/LINES.svg";
 
@@ -58,7 +59,7 @@ const Skill = () => {
       className="flex flex-col overflow-hidden items-center justify-center min-h-screen w-full py-6 z-0 relative"
       id="skills"
     >
-      <div className="h-full max-w-[80rem] w-full flex flex-col justify-center items-center lg:px-0">
+      <div className="h-full max-w-[60rem] w-full flex flex-col justify-center items-center lg:px-0">
         <div className="flex flex-col items-center justify-center z-10 mb-2">
           <h2 className="font-bold text-2xl lg:text-4xl text-gradient">
             Skillsets

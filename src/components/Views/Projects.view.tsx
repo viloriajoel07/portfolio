@@ -1,7 +1,7 @@
 import Image from "next/image";
+
 import { ProjectView } from "~/components";
 import lines from "~/assets/LINES.svg";
-import BgBlur from "~/components/BgBlur";
 
 const Projects = () => {
   return (
@@ -9,7 +9,7 @@ const Projects = () => {
       className=" flex flex-col justify-center items-center min-h-screen w-full z-0 relative overflow-hidden"
       id="projects"
     >
-      <div className="w-full h-full flex flex-col max-w-[80rem] md:px-8 z-30">
+      <div className="w-full h-full flex flex-col max-w-[60rem] px-8 md:px-0 z-30">
         <div className="flex flex-col justify-center items-center gap-1 pt-6 z-10">
           <h2 className="text-4xl lg:5xl px-4 font-bold w-full flex justify-center gap-1 text-center text-gradient">
             Projects

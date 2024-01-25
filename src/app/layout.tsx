@@ -11,19 +11,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <title>Viloria Dev</title>
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-LLEPPZH4M9"
-      ></script>
-      <Script>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-  
-          gtag('config', 'G-LLEPPZH4M9');
-          `}
-      </Script>
+      <meta
+        name="description"
+        content="Joel Viloria, This is my personal porfolio"
+      />
+      <meta
+        name="description"
+        content="Joel Viloria, Este es mi portafolio personal"
+      />
+      <meta
+        name="keywords"
+        content="Joel Viloria, porfolio, porfolio Joel Viloria, Proyectos Joel Viloria"
+      />
+      <meta name="robots" content="index, follow" />
+
       <body className="flex flex-col min-h-screen bg-gradient-to-r from-black to-zinc-900 overflow-x-hidden">
         <Navigation />
         {children}

@@ -9,6 +9,10 @@ html {
   color: white;
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .levitation-animate {
   animation: levitation 3.8s ease-in-out infinite;
 }

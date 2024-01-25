@@ -1,12 +1,9 @@
 "use client";
 import Image from "next/image";
-import { FC, useEffect, useState } from "react";
 import Link from "next/link";
+import { FC, useEffect, useState } from "react";
 
-import { usePathname } from "next/navigation";
-
-import LinkCo from "./Link.component";
-import { Github, WhatsAppIcon } from "~/assets/icons";
+import { Github } from "~/assets/icons";
 import linkeingIcon from "~/assets/icons/linkedin.svg";
 import InstagramIcon from "~/assets/icons/instagram.svg";
 
@@ -18,46 +15,66 @@ type Link = {
 
 interface NavigationProps {}
 
-const navigationLinks = [
+const links = [
   {
     title: "Home",
     path: "#home",
     id: 1,
   },
-  // {
-  //   title: "Experience",
-  //   path: "#experience",
-  //   id: 2,
-  // },
   {
-    title: "Skills",
-    path: "#skills",
-    id: 3,
+    title: "Experience",
+    path: "#experience",
+    id: 2,
   },
   {
     title: "Projects",
     path: "#projects",
     id: 4,
   },
+  {
+    title: "Skills",
+    path: "#skills",
+    id: 3,
+  },
 ];
 
 const Navigation: FC<NavigationProps> = (props) => {
-  const [links, setLinks] = useState(navigationLinks);
+  const [isFixed, setIsFixed] = useState(false);
 
-  const pathname = usePathname();
+  useEffect(() => {
+    // hacer nav fixed cuando haga scroll
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      // Establecer un umbral de desplazamiento (por ejemplo, 100 píxeles)
+      setIsFixed(scrollPosition > 80);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="w-full bg-transparent flex justify-center h-24 md:h-20">
-      <div className="max-w-[80rem] w-full flex flex-col md:flex-row justify-center md:justify-between items-center md:px-8">
-        <nav className="flex gap-8 my-2 md:my-0">
+    <header
+      className={`w-full bg-transparent flex justify-center h-24 md:h-20 z-10 ${
+        isFixed && "fixed backdrop-blur-lg z-50 transition-all"
+      }`}
+    >
+      <div className="max-w-[60rem] w-full flex flex-col md:flex-row justify-center md:justify-between items-center px-8 md:px-0">
+        <nav className="flex md:gap-8 my-2 md:my-0 flex-col md:flex-row justify-center items-center">
           <h2 className="text-white font-semibold">VILORIA DEV.</h2>
           <ul className="flex items-center gap-4 px-2">
             {links.map((link: Link) => (
-              <LinkCo
+              <a
+                href={link.path}
                 key={link.id}
-                data={link}
-                active={pathname === link.path}
-              />
+                className="text-gray-300 hover:text-gray-200 cursor-pointer"
+                title={link.title}
+              >
+                {link.title}
+              </a>
             ))}
           </ul>
         </nav>

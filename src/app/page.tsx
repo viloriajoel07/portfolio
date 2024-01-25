@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { DownloadIcon, Github, WhatsAppIcon } from "~/assets/icons";
-import profileImage from "~/assets/imageProfile.png";
+
 import { Button } from "~/components";
-import BgBlur from "~/components/BgBlur";
 import Experience from "~/components/Views/Experience.view";
 import Projects from "~/components/Views/Projects.view";
 import Skill from "~/components/Views/Skills.view";
+
+import profileImage from "~/assets/imageProfile.png";
 import lines from "~/assets/LINES.svg";
 import pointsGrid from "~/assets/pointsGrid.svg";
 import Javascript from "~/assets/icons/Javascript.png";
@@ -19,7 +19,7 @@ export default function Home() {
         className={`w-full flex flex-col justify-center items-center h-full relative`}
       >
         <Image src={lines} alt="lines" className="absolute -bottom-16 left-0" />
-        <div className="max-w-[80rem] h-[calc(100vh-80px)] flex flex-col-reverse items-center lg:flex-row w-full md:px-8">
+        <div className="max-w-[60rem] h-[calc(100vh-80px)] flex flex-col-reverse items-center lg:flex-row w-full px-8 md:px-0">
           <section className="flex-1 flex flex-col gap-3 py-8 lg:gap-2 z-10 justify-center lg:justify-start items-center lg:items-start">
             <section className="px-8 sm:px-0 flex flex-col justify-center md:justify-start text-slate-100">
               <p className="text-2xl md:text-3xl w-full text-center lg:text-start">
@@ -31,11 +31,11 @@ export default function Home() {
                 <span className="pl-2 text-fuchsia-600/25">{"/>"}</span>
               </p>
               <h2
-                className="font-extralight text-center lg:text-start text-white/60 lg:w-4/6 mt-3"
+                className="font-extralight text-center lg:text-start text-white/80 lg:w-4/6 mt-3"
                 style={{ fontWeight: "100" }}
               >
-                I'm fullstack developer, experienced in high-performance web
-                applications.
+                +1 year of experience as a fullstack developing high-performance
+                webs applications.
               </h2>
             </section>
 
@@ -63,7 +63,7 @@ export default function Home() {
             <span className="absolute -left-20 top-32 w-4 h-3 rounded-sm rotate-[35deg] bg-[#E59BFF]"></span>
             <span className="absolute top-8 right-48 w-3 h-3 rounded-sm rotate-[12deg] bg-blue-500"></span>
             <span className="absolute -right-8 top-48 w-4 h-3 rounded-sm rotate-[35deg] bg-[#FFC226]"></span>
-            <span className="absolute -left-48 top-32 w-24 h-24 rounded-sm blur-[6rem] bg-[#FFC226]"></span>
+            <span className="absolute -left-48 top-32 w-24 h-24 rounded-sm blur-[6rem] bg-[#FFC226]/50"></span>
             <Image
               src={pointsGrid}
               alt="grid"
@@ -88,15 +88,15 @@ export default function Home() {
             <Image
               src={profileImage}
               alt="my Image Profile"
-              className="w-52 sm:w-64 lg:w-80 object-contain z-20"
+              className="w-52 sm:w-64 lg:w-72 object-contain z-20"
             />
             <span className="absolute bottom-60 right-0 w-16 h-16  bg-fuchsia-600 blur-3xl rounded-full z-10"></span>
           </div>
         </div>
-        {/* <Experience /> */}
       </div>
-      <Skill />
+      <Experience />
       <Projects />
+      <Skill />
     </>
   );
 }
